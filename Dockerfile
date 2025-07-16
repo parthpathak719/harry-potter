@@ -1,33 +1,20 @@
 # Use the official PHP image with Apache
 FROM php:8.2-apache
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    unzip \
-    git \
-    && docker-php-ext-install zip pdo pdo_mysql
-
-# Enable Apache mod_rewrite
+# Enable Apache rewrite module (common for PHP apps)
 RUN a2enmod rewrite
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Change DocumentRoot to /var/www/html/public
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /etc/apache2/sites-available/000-default.conf
 
-# Set working directory
-WORKDIR /var/www/html
+# Copy your whole project to /var/www/html inside the container
+COPY . /var/www/html/
 
-# Copy project files to working directory
-COPY . .
+# Set permissions (optional but good practice)
+RUN chown -R www-data:www-data /var/www/html
 
-# Install PHP dependencies using Composer
-RUN composer install --no-dev --optimize-autoloader
-
-# Set permissions for Laravel storage and cache directories
-RUN chown -R www-data:www-data storage bootstrap/cache
-
-# Expose port 80
+# Expose port 80 for web traffic
 EXPOSE 80
 
-# Start Apache server
+# Start Apache in the foreground (default command)
 CMD ["apache2-foreground"]
