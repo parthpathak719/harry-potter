@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/houses.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/wizards.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/recruit.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/cast.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/quiz.css') }}">
 </head>
 <body>
@@ -13,6 +14,7 @@
         <a href="{{ route('welcome') }}">Welcome</a>
         <a href="{{ route('houses') }}">Houses</a>
         <a href="{{ route('recruit') }}">Recruit</a>
+        <a href="{{ route('cast') }}">Cast</a>
         <a href="{{ route('quiz') }}">Quiz</a>
     </nav>
     <main>

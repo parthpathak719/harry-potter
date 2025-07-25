@@ -143,19 +143,23 @@
     color: #ffffff;
 }
 
-/* Unmute Button */
-#unmute-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: rgba(30, 30, 30, 0.8);
-    color: white;
+button#unmute-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #444;
+    color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-family:Georgia,serif;
     cursor: pointer;
     z-index: 1000;
+}
+
+button#unmute-btn:hover {
+    background-color: #222;
 }
 
 .answer-text {

@@ -116,4 +116,8 @@ class WizardController extends Controller
 
         return view('quizAction', ['score'=>$score,'total'=>$total,'results'=>$results]);
     }
+
+    public function cast(){
+        return view('cast');
+    }
 }

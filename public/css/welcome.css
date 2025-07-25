@@ -1,82 +1,109 @@
-/* Fullscreen background video */
-#bg-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100vh;
-    width: 100vw;
-    object-fit: contain; /* Keeps aspect ratio with black bars */
-    z-index: -1;
-    background-color: black;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-/* Overlay content area */
-.content-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0; /* we’ll manually place top/bottom elements */
-    box-sizing: border-box;
-    pointer-events: none; /* allows video clicks if needed */
-    font-family:Georgia,serif;
-}
-
-/* Heading at top in black bar */
-.content-wrapper h1 {
+body {
     margin: 0;
-    padding-top: 2vh; /* space from top */
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px black;
-    z-index: 2;
-    pointer-events: auto;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    background-color: #121212;
+    overflow-y: auto;
+    height: 100vh;
 }
 
-/* Button at bottom in black bar */
-.content-wrapper a {
-    margin-bottom: 2vh; /* space from bottom */
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s ease;
-    z-index: 2;
-    pointer-events: auto;
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.content-wrapper a:hover {
-    background-color: white;
-    transform: scale(1.05);
-    color:black;
-}
-
-/* Unmute button */
-#button1 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.8);
+/* Envelope */
+.envelope-container {
+    position: relative;
+    width: 380px;
+    height: 270px;
     cursor: pointer;
     z-index: 10;
-    pointer-events: auto;
-    font-family:Georgia,serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 3s ease-in-out infinite;
 }
 
-#button1:hover {
-    background-color: rgba(255, 255, 255, 1);
+@keyframes float {
+    0%, 100% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+}
+
+#envelope-img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Letter */
+#letter-container {
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    background: url('https://res.cloudinary.com/rishblol/image/upload/v1753424051/hogwarts_upscaled_4x_1_m9hhot.jpg') no-repeat center center;
+    background-size: cover;
+    width: 700px;
+    height: 1200px;
+    padding: 220px 100px 100px; /* Push down text further */
+    color: #2b1700;
+    font-size: 26px;
+    line-height: 1.1;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 5;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+#letter-container.show {
+    animation: display 1s forwards;
+}
+
+@keyframes display {
+    0% {
+        transform: scale(1.2) rotateX(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+/* Scroll inside */
+#letter-scroll {
+    max-height: 100%;
+    width: 100%;
+}
+
+#letter-text {
+    max-width: 90%;
+    margin: 135px auto;
+    white-space: pre-line;
+}
+
+/* UNFOLDING effect for envelope-to-letter */
+
+.unfolding {
+    animation: unfoldAnim 1s forwards;
+}
+
+@keyframes unfoldAnim {
+    0% {
+        transform: scale(1) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2) rotateX(90deg);
+        opacity: 0;
+    }
 }

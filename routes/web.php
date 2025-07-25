@@ -19,3 +19,5 @@ Route::post('/recruitAction',[WizardController::class,'recruitAction'])->name('r
 
 Route::get('/quiz',[WizardController::class,'quiz'])->name('quiz');
 Route::post('/quizAction',[WizardController::class,'quizAction'])->name('quizAction');
+
+Route::get('/cast',[WizardController::class,'cast'])->name('cast');
