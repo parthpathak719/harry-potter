@@ -21,7 +21,7 @@ body {
 /* Envelope */
 .envelope-container {
     position: relative;
-    width: 380px;
+    width: 500px;
     height: 270px;
     cursor: pointer;
     z-index: 10;
@@ -38,6 +38,7 @@ body {
 
 #envelope-img {
     width: 100%;
+    height: 100%;
     display: block;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
@@ -48,7 +49,7 @@ body {
     display: none;
     justify-content: center;
     align-items: flex-start;
-    background: url('https://res.cloudinary.com/rishblol/image/upload/v1753424051/hogwarts_upscaled_4x_1_m9hhot.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dd4ldehqo/image/upload/v1753482953/letter_telxt9.jpg') no-repeat center center;
     background-size: cover;
     width: 700px;
     height: 1200px;
@@ -57,6 +58,7 @@ body {
     font-size: 26px;
     line-height: 1.1;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
     position: relative;
     z-index: 5;
     transform: scale(0.6);

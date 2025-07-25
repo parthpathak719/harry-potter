@@ -15,6 +15,9 @@ class WizardController extends Controller
     return view('welcome');
     }
     
+    public function platform(){
+        return view('platform');
+    }
 
     public function houses(){
         $houses=House::all();
@@ -88,6 +91,10 @@ class WizardController extends Controller
         return redirect()->route('wizards',['id'=>$validated['house_id']])->with('success','Sorcerer Recruited Successfully!!');
     }
 
+    public function cast(){
+        return view('cast');
+    }
+
     public function quiz(){
         $questions=Question::with('option')->inRandomOrder()->limit(10)->get();
         return view('quiz',['questions'=>$questions]);
@@ -115,9 +122,5 @@ class WizardController extends Controller
         }
 
         return view('quizAction', ['score'=>$score,'total'=>$total,'results'=>$results]);
-    }
-
-    public function cast(){
-        return view('cast');
     }
 }

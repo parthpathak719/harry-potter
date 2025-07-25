@@ -10,7 +10,7 @@
     <div class="wrapper">
         <!-- Envelope -->
         <div class="envelope-container" id="envelope">
-            <img id="envelope-img" src="https://res.cloudinary.com/rishblol/image/upload/v1753424231/1b28ff23841a65d11f763e2de9bb1115_36a81d18ab2bd9ef4a44cf1cf57d4d0d_ntxygn.jpg" alt="Hogwarts Envelope">
+            <img id="envelope-img" src="https://res.cloudinary.com/dd4ldehqo/image/upload/v1753483601/envelope_vcvedn.jpg" alt="Hogwarts Envelope">
             <div class="flap" id="flap"></div>
         </div>
 
@@ -52,7 +52,7 @@ With great respect,<br>
 <strong>Parth Pathak</strong><br>
 <i>Keeper of the Scrolls</i><br>
 <i>Hogwarts School of Witchcraft and Wizardry</i><br>
-<a href="{{ route('houses') }}">Houses</a>
+<a href="{{ route('platform') }}">Go To Platform</a>
 `;
 
 
