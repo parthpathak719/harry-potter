@@ -15,16 +15,18 @@
 
 /* Modal Content */
 #modal-content4 {
+    position: relative;
     background-color: rgba(20, 20, 20, 0.95);
     margin: auto;
-    padding: 30px 40px;
+    padding: 35px 50px;
     border: 2px solid #ffc107;
-    width: 60%;
+    width: 40%;
     max-width: 600px;
     border-radius: 16px;
     color: #fff;
     text-align: center;
     font-family: Georgia, serif;
+    font-weight: bold;
     box-shadow: 0 0 25px rgba(255, 208, 0, 0.6);
     animation: fadeout 0.5s ease;
 }
@@ -44,11 +46,13 @@
 /* Close Button */
 #close4 {
     color: #fff;
-    float: right;
-    font-size: 28px;
+    right: 20px;
+    top: 15px;
+    font-size: 26px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    position: absolute;
 }
 
 #close4:hover {
@@ -57,13 +61,13 @@
 
 /* Modal Heading and Text */
 #modal-content4 h1 {
-    font-size: 2.5em;
+    font-size: 2.4rem;
     margin-bottom: 15px;
     text-shadow: 2px 2px 6px #000;
 }
 
 #modal-content4 p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: #ccc;
 }

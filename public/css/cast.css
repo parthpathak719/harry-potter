@@ -20,10 +20,11 @@
     padding: 35px 50px;
     width: 40%;
     max-width: 600px;
-    border-radius: 18px;
+    border-radius: 16px;
     border: 2px solid rgba(200, 170, 50, 0.7);
     box-shadow: 0 0 35px rgba(200, 170, 50, 0.6);
     font-family: 'Georgia', serif;
+    font-weight: bold;
     text-align: center;
     animation: modalPop 0.6s ease forwards;
 }
@@ -42,7 +43,7 @@
 
 /* Heading Glow */
 #modal-content5 h1 {
-    font-size: 2.4em;
+    font-size: 2.4rem;
     margin-bottom: 12px;
     text-shadow: 0 0 5px rgba(255, 240, 200, 0.8),
                  0 0 10px rgba(255, 200, 100, 0.5);
@@ -50,7 +51,7 @@
 
 /* Paragraph Style */
 #modal-content5 p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #d9c89e;
 }
 

@@ -28,12 +28,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: scale(0.9); }
-    50% { transform: scale(1.1); }
 }
 
 #envelope-img {
@@ -42,6 +36,29 @@ body {
     display: block;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: scale(0.7); }
+    50% { transform: scale(1.1); }
+}
+
+/* UNFOLDING effect for envelope-to-letter */
+
+.unfolding {
+    animation: unfoldAnim 1s forwards;
+}
+
+@keyframes unfoldAnim {
+    0% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
 }
 
 /* Letter */
@@ -52,7 +69,7 @@ body {
     background: url('https://res.cloudinary.com/dd4ldehqo/image/upload/v1753482953/letter_telxt9.jpg') no-repeat center center;
     background-size: cover;
     width: 700px;
-    height: 1200px;
+    height: 1280px;
     padding: 220px 100px 100px; /* Push down text further */
     color: #2b1700;
     font-size: 26px;
@@ -93,19 +110,21 @@ body {
     white-space: pre-line;
 }
 
-/* UNFOLDING effect for envelope-to-letter */
-
-.unfolding {
-    animation: unfoldAnim 1s forwards;
+#letter-text a {
+    font-size: 26px;
+    color: #4b2e06;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 25px;
+    border: 2px solid #4b2e06;
+    border-radius: 8px;
+    background: rgba(255, 248, 220, 0.5);
+    transition: all 0.3s ease;
 }
 
-@keyframes unfoldAnim {
-    0% {
-        transform: scale(1) rotateX(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.2) rotateX(90deg);
-        opacity: 0;
-    }
+#letter-text a:hover {
+    background: rgba(75, 46, 6, 0.8);
+    color: #fff8dc;
+    transform: scale(1.05);
 }

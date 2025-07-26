@@ -10,7 +10,7 @@
     <div class="wrapper">
         <!-- Envelope -->
         <div class="envelope-container" id="envelope">
-            <img id="envelope-img" src="https://res.cloudinary.com/dd4ldehqo/image/upload/v1753483601/envelope_vcvedn.jpg" alt="Hogwarts Envelope">
+            <img id="envelope-img" src="https://res.cloudinary.com/dd4ldehqo/image/upload/v1753521198/envelope_buqces.jpg" alt="Hogwarts Envelope">
             <div class="flap" id="flap"></div>
         </div>
 
@@ -18,7 +18,6 @@
         <div id="letter-container">
             <div id="letter-scroll">
                 <p id="letter-text"></p>
-                <a href="{{ route('houses') }}">Houses</a>
             </div>
         </div>
     </div>
@@ -35,7 +34,7 @@
 
         const message = `
 <h1 style='text-align:center;'><b>Welcome to the Wizarding Archives</b></h1>
-Dear Student,
+Dear Student,<br>
 We are pleased to inform you that you have been granted access to the <strong>Wizarding Archives</strong>, 
 a collection of enchanted records, ancient spells, and hidden histories preserved through centuries of magical tradition.
 <br>
@@ -51,10 +50,9 @@ Use what you uncover with <b>wisdom</b>, <b>curiosity</b>, and <b>care</b>. The 
 With great respect,<br>
 <strong>Parth Pathak</strong><br>
 <i>Keeper of the Scrolls</i><br>
-<i>Hogwarts School of Witchcraft and Wizardry</i><br>
-<a href="{{ route('platform') }}">Go To Platform</a>
+<i>Hogwarts School of Witchcraft and Wizardry</i><br><br>
+<div style="text-align:center;"><a href="{{ route('platform') }}">Go To Platform</a></div>
 `;
-
 
         envelope.addEventListener('click', () => {
             envelope.classList.add('unfolding');
@@ -71,7 +69,7 @@ With great respect,<br>
         function typeMessage(text) {
             let i = 0;
             let buffer = '';
-            const speed = 30;
+            const speed = 0;
             const writingSound=document.getElementById('writingSound');
 
             writingSound.loop=true;

@@ -56,39 +56,38 @@ nav a:hover {
     position: relative; /* Make it a positioning context for the close button */
     background: linear-gradient(to bottom right, #1e1e1e, #2c2c2c);
     color: #f0e6d2;
-    margin: 12% auto;
-    padding: 30px 40px;
+    margin: 10% auto;
+    padding: 35px 50px;
     border: 2px solid #f0c040;
     border-radius: 16px;
-    width: fit-content;
+    width: 40%;
     max-width: 500px;
     box-shadow: 0 0 25px rgba(240, 192, 64, 0.3);
     text-align: center;
     font-family:Georgia,serif;
-    font-size: 1.5rem;
     font-weight:bold;
     animation: fadeout 0.5s ease;
 }
 
 #modal-content h1 {
     margin-bottom: 12px;
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: #ffd700;
 }
 
 #modal-content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #ccc;
 }
 
 /* Close button */
 #close {
     position: absolute;
-    top: 12px;
-    right: 18px;
-    color: #ccc;
-    font-size: 28px;
+    right: 20px;
+    top: 15px;
+    font-size: 26px;
     font-weight: bold;
+    color: #ccc;
     cursor: pointer;
     transition: color 0.3s ease;
     z-index: 10;
