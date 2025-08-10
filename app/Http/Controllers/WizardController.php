@@ -19,6 +19,10 @@ class WizardController extends Controller
         return view('platform');
     }
 
+    public function kingcross(){
+        return view('kingcross');
+    }
+
     public function houses(){
         $houses=House::all();
         return view('houses',['houses'=>$houses]);

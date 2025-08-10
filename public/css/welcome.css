@@ -66,7 +66,7 @@ body {
     display: none;
     justify-content: center;
     align-items: flex-start;
-    background: url('https://res.cloudinary.com/dd4ldehqo/image/upload/v1753482953/letter_telxt9.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/dd4ldehqo/image/upload/v1753521362/letter_r3p5xm.jpg') no-repeat center center;
     background-size: cover;
     width: 700px;
     height: 1280px;
@@ -111,6 +111,7 @@ body {
 }
 
 #letter-text a {
+    display: inline-block;
     font-size: 26px;
     color: #4b2e06;
     text-decoration: none;
