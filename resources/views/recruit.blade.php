@@ -28,10 +28,10 @@
             </div>
         </div>
     @endif
-    <audio id="normal-audio" autoplay loop muted>
+    <audio id="normal-audio" loop muted>
         <source src="{{ asset('audio/song.mp4') }}" type="audio/mp4">
     </audio>
-    <button id="unmute-btn" onclick="document.getElementById('normal-audio').muted=false;this.style.display='none';">🔊 Unmute</button>
+    
 
     <form id="create" name="create" autocomplete="on" method="post" action="{{ route('recruitAction') }}">
         @csrf

@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/platform.css') }}">
 </head>
 <body>
+    <script>
+        window.onload=function () {
+            document.getElementById('id06').style.display = 'block';
+        }
+    </script>
     <div class="modal6" id="id06">
             <div id="modal-content6">
                 <span id="close6" onclick="document.getElementById('id06').style.display='none';">&times;</span>
@@ -15,11 +20,9 @@
             </div>
     </div>
 
-    <video id="bg-video" autoplay loop muted>
+    <video id="bg-video" loop muted>
         <source src="{{ asset('videos/platform.mp4') }}" type="video/mp4">
     </video>
-
-    <button id="button1">🔊 Unmute</button>
 
     <div class="scene">
         <div class="arrow-label">

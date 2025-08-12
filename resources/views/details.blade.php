@@ -9,7 +9,7 @@
 </head>
 <body style="background: url('{{ $details->background_image }}') no-repeat center top fixed; background-size: contain; margin: 0; padding: 0; background-color: #000;">
     
-    <button onclick="document.getElementById('normal-audio').muted=false;this.style.display='none';">🔊 Unmute</button>
+    
     <div class="content">
         <h1>{{ $details->name }}</h1>
 
@@ -41,26 +41,26 @@
         @endif
 
 
-      @if (empty($details->theme_song))
-            <audio id="normal-audio" autoplay loop muted>
+        @if (empty($details->theme_song))
+            <audio id="normal-audio" loop muted>
                 <source src="{{ asset('audio/song.mp4') }}" type="audio/mp4">
             </audio>
         @else
             @if($details->name == "Albus Percival Wulfric Brian Dumbledore")
-                <audio id="normal-audio" autoplay loop muted>
+                <audio id="normal-audio" loop muted>
                     <source src="{{ asset('audio/dumbledore.mp4') }}" type="audio/mp4">
                 </audio>
             @elseif($details->name == "Harry James Potter")
-                <audio id="normal-audio" autoplay loop muted>
+                <audio id="normal-audio" loop muted>
                     <source src="{{ asset('audio/harry.mp4') }}" type="audio/mp4">
                 </audio>
             @else
-                <audio id="normal-audio" autoplay loop muted>
+                <audio id="normal-audio" loop muted>
                     <source src="{{ asset('audio/villain.mp4') }}" type="audio/mp4">
                 </audio>
             @endif
         @endif
     </div>
-
+    <script src={{ asset('js/details.js') }}></script>
 </body>
 </html>

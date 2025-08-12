@@ -13,10 +13,25 @@
             color: #ffffff;
         }
     </style>
-    <audio id="normal-audio" autoplay loop muted>
-        <source src="{{ asset('audio/song.mp4') }}" type="audio/mp4">
-    </audio>
-    <button id="unmute-btn" onclick="document.getElementById('normal-audio').muted=false;this.style.display='none';">🔊 Unmute</button>
+    @if (empty($wizard->theme_song))
+        <audio id="normal-audio" loop muted>
+            <source src="{{ asset('audio/song.mp4') }}" type="audio/mp4">
+        </audio>
+    @else
+        @if($wizard->name == "Albus Percival Wulfric Brian Dumbledore")
+            <audio id="normal-audio" loop muted>
+                <source src="{{ asset('audio/dumbledore.mp4') }}" type="audio/mp4">
+            </audio>
+        @elseif($wizard->name == "Harry James Potter")
+            <audio id="normal-audio" loop muted>
+                <source src="{{ asset('audio/harry.mp4') }}" type="audio/mp4">
+            </audio>
+        @else
+            <audio id="normal-audio" loop muted>
+                <source src="{{ asset('audio/villain.mp4') }}" type="audio/mp4">
+            </audio>
+        @endif
+    @endif
     
     <form id="create" name="create" autocomplete="on" method="post" action="{{ route('editAction',$wizard->id) }}">
         @csrf

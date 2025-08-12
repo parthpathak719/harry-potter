@@ -16,11 +16,9 @@
             </div>
         </div>
         
-        <audio id="normal-audio" autoplay loop muted>
+        <audio id="normal-audio" loop muted>
             <source src="{{ asset('audio/song.mp4') }}" type="audio/mp4">
         </audio>
-
-        <button id="unmute-btn" onclick="document.getElementById('normal-audio').muted=false;this.style.display='none';">🔊 Unmute</button>
 
         <form id="quiz-form" name="quiz" method="post" action="{{ route('quizAction') }}" autocomplete="on">
             @csrf
@@ -46,5 +44,6 @@
                 <input id="reset" type="reset" value="Reset">
             </div>
         </form>
+        <script src={{ asset('js/quiz.js') }}></script>
     </body>
 </x-layout>
